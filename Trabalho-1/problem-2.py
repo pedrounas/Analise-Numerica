@@ -6,11 +6,13 @@ for i in range (-15, -7):
     sum = 0
     while ( 1 ):
         x = abs(math.factorial(count)**2/math.factorial(2*count + 1))
-        sum+= x
-        y = sum * (9/(2*math.sqrt(3)))
-        if (abs(math.pi - y) >= 10**i):
+        if (x >= 10**i):
+            sum+= x
             count = count + 1
+        
         else:
             break
+    
+    y = sum * (9/(2*math.sqrt(3)))
 
     print ('Valor do erro:' , 10**i,  '| Valor da serie:', count, '| Sn (Arrendondar a n+1 casas * 10^n): ', '%.16f' % y)

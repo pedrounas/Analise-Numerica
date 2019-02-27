@@ -1,13 +1,15 @@
 import numpy as np
 import math
 
-for i in range (-15, -7):
+for i in range (-8, -7):
     count = 0
     sum = 0
     while ( 1 ):
-        x = abs(math.factorial(count)**2/math.factorial(2*count + 1))
+        x = abs(((-1)**count)/(2*count+1))
+        print(x)
         sum+= x
-        y = sum * (9/(2*math.sqrt(3)))
+        y = sum * 4
+        print(y)
         if (abs(math.pi - y) >= 10**i):
             count = count + 1
         else:
