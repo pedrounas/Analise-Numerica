@@ -18,14 +18,14 @@ Exercício 3:
 
 Exercício 4a:
 
-Valor do erro: 1e-15 | Valor da serie: 24 | Sn (Arrendondar a n+1 casas * 10^n):  3.1415926535897936
-Valor do erro: 1e-14 | Valor da serie: 22 | Sn (Arrendondar a n+1 casas * 10^n):  3.1415926535897851
-Valor do erro: 1e-13 | Valor da serie: 21 | Sn (Arrendondar a n+1 casas * 10^n):  3.1415926535897571
-Valor do erro: 1e-12 | Valor da serie: 19 | Sn (Arrendondar a n+1 casas * 10^n):  3.1415926535891852
-Valor do erro: 1e-11 | Valor da serie: 18 | Sn (Arrendondar a n+1 casas * 10^n):  3.1415926535873004
-Valor do erro: 1e-10 | Valor da serie: 16 | Sn (Arrendondar a n+1 casas * 10^n):  3.1415926535477534
-Valor do erro: 1e-09 | Valor da serie: 14 | Sn (Arrendondar a n+1 casas * 10^n):  3.1415926528764806
-Valor do erro: 1e-08 | Valor da serie: 13 | Sn (Arrendondar a n+1 casas * 10^n):  3.1415926506432696
+Valor do erro: 1e-15 | Valor da serie: 24 | En (Arrendondar a n+1 casas * 10^n):  0.0000000000000004
+Valor do erro: 1e-14 | Valor da serie: 22 | En (Arrendondar a n+1 casas * 10^n):  0.0000000000000080
+Valor do erro: 1e-13 | Valor da serie: 21 | En (Arrendondar a n+1 casas * 10^n):  0.0000000000000360
+Valor do erro: 1e-12 | Valor da serie: 19 | En (Arrendondar a n+1 casas * 10^n):  0.0000000000006080
+Valor do erro: 1e-11 | Valor da serie: 18 | En (Arrendondar a n+1 casas * 10^n):  0.0000000000024927
+Valor do erro: 1e-10 | Valor da serie: 16 | En (Arrendondar a n+1 casas * 10^n):  0.0000000000420397
+Valor do erro: 1e-09 | Valor da serie: 14 | En (Arrendondar a n+1 casas * 10^n):  0.0000000007133125
+Valor do erro: 1e-08 | Valor da serie: 13 | En (Arrendondar a n+1 casas * 10^n):  0.0000000029465235
 
 Exercício 4b:
 

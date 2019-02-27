@@ -12,5 +12,6 @@ for i in range (-15, -7):
             count = count + 1
         else:
             break
-
-    print ('Valor do erro:' , 10**i,  '| Valor da serie:', count, '| Sn (Arrendondar a n+1 casas * 10^n): ', '%.16f' % y)
+    
+    z = abs(math.pi - y)
+    print ('Valor do erro:' , 10**i,  '| Valor da serie:', count, '| En (Arrendondar a n+1 casas * 10^n): ', '%.16f' % z)
