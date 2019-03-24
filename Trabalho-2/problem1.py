@@ -78,7 +78,7 @@ def SimpleIterativeMethod(f,x0,eps,nMax):
     else:
         print("\nProblema 2a)")
         print("Solução encontrada: %0.20f" % x1)
-        print("Erro: %0.20f" % err)
+        print("Erro: %0.20f" % err, "Iterations:", i)
         print("\n")
         return x1
 
