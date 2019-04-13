@@ -15,8 +15,11 @@ def startLagrange():
         x, y = input().split() # Separa as inputs para a var x e var y
         xValue.append(typeCheck(x)) # Mete no fim do array
         yValue.append(typeCheck(y))
+    print()
     Lagrange(n,x0,xValue,yValue)
-    printLagrange(n,x0,xValue,yValue)
+    # printLagrange(n,x0,xValue,yValue)
+    Newton(n,x0,xValue,yValue)
+
 
 def Lagrange(n,x0,xVal,yVal):
     res = 0
@@ -28,7 +31,30 @@ def Lagrange(n,x0,xVal,yVal):
                 num *= (x0-xVal[i])
                 den *= (xVal[t]-xVal[i])
         res += (num/den) * yVal[t]
-    print('Valor de pn(x): ', res)
+    print('Valor de pn(x) segundo Método de Lagrange: ', res)
+
+def Newton(n,x0,xVal,yVal):
+    res = yVal[0]
+    for t in range (0,n):
+        split = 1
+        for i in range (0,t+1):
+            split *= (x0-xVal[i])
+        res += split*splitDif(t+1,xVal,yVal,0,1)
+    print('Valor de pn(x) segundo Método de Newton:', res)
+
+def splitDif(n,xVal,yVal,a,b):
+    dif = 1
+    if n == 1:
+        return (yVal[b]-yVal[a])/(xVal[b]-xVal[a])
+    else:
+        return (splitDif(n-1,xVal,yVal,1,n)-splitDif(n-1,xVal,yVal,0,n-1))/(xVal[n]-xVal[0])
+
+
+def typeCheck(x): # Converte a input em int ou float dependendo do tipo
+    try:
+        return int(x)
+    except ValueError:
+        return float(x)
 
 def printLagrange(n,x0,xVal,yVal): # Imprime o polinomio para confirmar valores
     print('pn(x) = ',end='')
@@ -55,10 +81,5 @@ def printLagrange(n,x0,xVal,yVal): # Imprime o polinomio para confirmar valores
     print(')',end='')
     print()
 
-def typeCheck(x): # Converte a input em int ou float dependendo do tipo
-    try:
-        return int(x)
-    except ValueError:
-        return float(x)
 
 main()
