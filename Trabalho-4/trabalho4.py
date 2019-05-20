@@ -12,33 +12,41 @@ aproxValue = 1.447977898105671 # Valor obtido com erro inferior a 1.5e-15
 def Simpson():
     print('Valor absoluto usado é %.14f:' % aproxValue)
     print()
-    n = 2516 # Calculado no programa auxiliar
-    deltaX = (b-a)/n
-    multiplier = float(deltaX/3)
-    points = np.linspace(a, b, n+1)
-    i = 0
-    total = 0.0
-    error = 1.5e-13
-    for x in points:
-        if i % 2 == 0:
-            if x != a and x != b:
-                total += 2*f(x)
+    for j in range (0,2):
+        if j == 0: # Para 7 casas decimais
+            n = 80 # Valor obtido no programa auxiliar
+            error = 1.5e-7
+        else: # Para 12 casas decimais
+            n = 1418 # Valor obtido no programa auxiliar
+            error = 1.5e-12
+        
+        deltaX = (b-a)/n
+        multiplier = float(deltaX/3)
+        points = np.linspace(a, b, n+1)
+        i = 0
+        total = 0.0
+        for x in points:
+            if i % 2 == 0:
+                if x != a and x != b:
+                    total += 2*f(x)
+                else:
+                    total += f(x)
             else:
-                total += f(x)
+                total += 4*f(x)
+            i += 1
+
+        total = total*multiplier
+        print('Regra de Simpson com n =', n, ', erro =', error, 'e |I-If| = {:.3e}'.format(abs(aproxValue-total)))
+
+        if j == 0:
+            print('Resultado: %.7f ± 1e-6' % total)
         else:
-            total += 4*f(x)
-        i += 1
-    total = total*multiplier
-    print('Regra de Simpson com n =', n, ', erro =', error, 'e |I-If| = %.20f' % abs(aproxValue-total))
-    print('Resultado: %.17f ± 1.5e-13' % total)
-    print()
-    print('7 casas decimais: %.7f' % total)
-    print('12 casas decimais: %.12f' % total)
-    print()
-    print('Regra dos Rectângulos:')
+            print('Resultado: %.12f ± 1e-11' % total)
+        print() 
 
 
 def Rectangule():
+    print('Regra dos Rectângulos:')
     for n in range(1, 21):
         result = 0.0
         exp = 2**(n)
@@ -61,4 +69,4 @@ def epsilon():
 
 
 Simpson()
-Rectangule()
+#   Rectangule()
