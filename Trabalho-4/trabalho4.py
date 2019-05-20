@@ -37,11 +37,10 @@ def Simpson():
 
         total = total*multiplier
         print('Regra de Simpson com n =', n, ', erro =', error, 'e |I-If| = {:.3e}'.format(abs(aproxValue-total)))
-
         if j == 0:
-            print('Resultado: %.7f ± 1e-6' % total)
+            print('Resultado: %.7f' % total,'± {:.3e}'.format(abs(aproxValue-total)))
         else:
-            print('Resultado: %.12f ± 1e-11' % total)
+            print('Resultado: %.12f' % total,'± {:.3e}'.format(abs(aproxValue-total)))
         print() 
 
 
