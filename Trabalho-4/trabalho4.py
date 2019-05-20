@@ -40,9 +40,10 @@ def Simpson():
 
 def Rectangule():
     for n in range(1, 21):
-        deltaX = (b-a)/n
         result = 0.0
-        points = np.linspace(a, b, n+1)
+        exp = 2**(n)
+        deltaX = (b-a)/exp
+        points = np.linspace(a, b, exp)
         points = points[:-1]
         for x in points:
             result += f(x)
